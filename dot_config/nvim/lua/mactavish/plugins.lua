@@ -104,10 +104,6 @@ lazy.setup({
     'ggandor/leap.nvim',
 
     'ThePrimeagen/vim-be-good',
-    -- Floating Terminal
-    'numToStr/FTerm.nvim',
-    'ptzz/lf.vim',
-    'voldikss/vim-floaterm',
     'olimorris/persisted.nvim',
 
     -- for formatters and linters
