@@ -1,10 +1,14 @@
-local status_ok, bufferline = pcall(require, "bufferline")
+local status_ok, bufferline = pcall(require, "barbar")
 if not status_ok then
     return
 end
 
 bufferline.setup({
-    icon_pinned = '車',
+    icons = {
+       pinned = {
+           button = '車',
+       },
+    },
     animation = true
 })
 
