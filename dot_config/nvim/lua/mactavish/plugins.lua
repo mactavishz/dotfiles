@@ -18,8 +18,14 @@ if not status_ok then
 end
 
 lazy.setup({
-    -- Have packer manage itself
-    'wbthomason/packer.nvim',
+    -- Git related plugins
+    'tpope/vim-fugitive',
+    'tpope/vim-rhubarb',
+
+    -- Detect tabstop and shiftwidth automatically
+    'tpope/vim-sleuth',
+    'tpope/vim-repeat',
+
     -- Telescope
     {
         'nvim-telescope/telescope.nvim',
@@ -37,10 +43,22 @@ lazy.setup({
     -- Treesitter
     {
         'nvim-treesitter/nvim-treesitter',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter-textobjects',
+        },
         build = ':TSUpdate',
     },
+
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v2.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+        }
+    },
+
     'nvim-treesitter/playground',
-    'j-hui/fidget.nvim',
     -- Buffer mark and navigation
     'theprimeagen/harpoon',
     -- Undo history
@@ -51,38 +69,54 @@ lazy.setup({
         name = 'catppuccin'
     },
 
-    -- LSP related
     {
-        'VonHeikemen/lsp-zero.nvim',
+        -- LSP Configuration & Plugins
+        'neovim/nvim-lspconfig',
         dependencies = {
-            -- LSP Support
-            { 'neovim/nvim-lspconfig' },
-            { 'williamboman/mason.nvim' },
-            { 'williamboman/mason-lspconfig.nvim' },
+            -- Automatically install LSPs to stdpath for neovim
+            { 'williamboman/mason.nvim', config = true },
+            'williamboman/mason-lspconfig.nvim',
 
-            -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },
-            { 'hrsh7th/cmp-buffer' },
-            { 'hrsh7th/cmp-path' },
-            { 'hrsh7th/cmp-cmdline' },
-            { 'saadparwaiz1/cmp_luasnip' },
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'hrsh7th/cmp-nvim-lua' },
+            -- Useful status updates for LSP
+            -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+            { 'j-hui/fidget.nvim',       opts = {} },
 
-            -- Snippets
-            { 'L3MON4D3/LuaSnip', },
-            { 'rafamadriz/friendly-snippets' },
-        }
+            -- Additional lua configuration, makes nvim stuff amazing!
+            'folke/neodev.nvim',
+        },
+    },
+
+    {
+        -- Autocompletion
+        'hrsh7th/nvim-cmp',
+        dependencies = {
+            -- Snippet Engine & its associated nvim-cmp source
+            'L3MON4D3/LuaSnip',
+            'saadparwaiz1/cmp_luasnip',
+
+            -- Adds LSP completion capabilities
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/nvim-cmp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-cmdline',
+            'saadparwaiz1/cmp_luasnip',
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-nvim-lua',
+
+            -- Adds a number of user-friendly snippets
+            'rafamadriz/friendly-snippets',
+        },
     },
 
     'nvim-lua/popup.nvim',
     'windwp/nvim-autopairs',
     'numToStr/Comment.nvim',
-    'kyazdani42/nvim-web-devicons',
+    'nvim-tree/nvim-web-devicons',
     -- Bufferline alternative
     {
         'romgrk/barbar.nvim',
-        dependencies = 'kyazdani42/nvim-web-devicons'
+        dependencies = 'nvim-tree/nvim-web-devicons'
     },
     'nvim-lualine/lualine.nvim',
     'gpanders/editorconfig.nvim',
@@ -90,7 +124,6 @@ lazy.setup({
     'lukas-reineke/indent-blankline.nvim',
     'goolord/alpha-nvim',
 
-    'tpope/vim-repeat',
     {
         'kylechui/nvim-surround',
         version = '*', -- Use for stability; omit to use `main` branch for the latest features
@@ -100,7 +133,6 @@ lazy.setup({
             })
         end
     },
-    -- use 'phaazon/hop.nvim'
     'ggandor/leap.nvim',
 
     'ThePrimeagen/vim-be-good',
@@ -110,7 +142,7 @@ lazy.setup({
     'jose-elias-alvarez/null-ls.nvim',
     {
         'folke/trouble.nvim',
-        dependencies = 'kyazdani42/nvim-web-devicons'
+        dependencies = 'nvim-tree/nvim-web-devicons'
     },
     {
         "folke/todo-comments.nvim",
@@ -128,33 +160,13 @@ lazy.setup({
         end
     },
 
-    -- Tabnine
-    -- {
-    --     'tzachar/cmp-tabnine',
-    --     build = './install.sh',
-    --     dependencies = 'hrsh7th/nvim-cmp'
-    -- },
-
     -- Copilot
     {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
         event = "InsertEnter",
-        config = function()
-            require("copilot").setup({
-                suggestion = { enabled = false },
-                panel = { enabled = false },
-            })
-        end
     },
-    -- Copilot cmp
-    {
-        "zbirenbaum/copilot-cmp",
-        dependencies = "zbirenbaum/copilot.lua",
-        config = function()
-            require("copilot_cmp").setup()
-        end
-    },
-    -- Git
+
+    -- Gitsign
     'lewis6991/gitsigns.nvim'
 })

@@ -5,10 +5,12 @@ vim.opt.relativenumber = true                   -- set relative numbered lines
 
 vim.opt.conceallevel = 0                        -- so that `` is visible in markdown files
 vim.opt.fileencoding = "utf-8"                  -- the encoding written to a file
+vim.o.completeopt = 'menuone,noselect'          -- set completeopt to have a better completion experience
 
 vim.opt.hlsearch = false                        -- highlight all matches on previous search pattern
 vim.opt.incsearch = true                        -- increamental search
-vim.opt.ignorecase = false                      -- ignore case in search patterns
+vim.opt.ignorecase = true                       -- ignore case in search patterns
+vim.opt.smartcase = true                        -- ignore case in search patterns
 
 vim.opt.mouse = "a"                             -- allow the mouse to be used in neovim
 vim.opt.showmode = false                        -- we don't need to see things like -- INSERT -- anymore
@@ -27,16 +29,15 @@ vim.opt.shiftwidth = 4                          -- the number of spaces inserted
 vim.opt.tabstop = 4                             -- insert 2 spaces for a tab
 vim.opt.softtabstop = 4
 
+vim.opt.breakindent = true
 vim.opt.smartindent = true                      -- make indenting smarter again
-vim.opt.wrap = false                            -- display lines as one long line
 
 vim.opt.cursorline = true                       -- highlight the current line
 vim.opt.cursorcolumn = true                     -- highlight the current column
 
 vim.opt.signcolumn = "yes"                      -- always show the sign column otherwise it would shift the text each time
 vim.opt.scrolloff = 8                           -- is one of my fav
--- vim.opt.colorcolumn = "80"
-vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 
 vim.opt.updatetime = 50                         -- quick and responsive update
-vim.opt.timeoutlen = 500
+vim.opt.timeout = true
+vim.opt.timeoutlen = 300

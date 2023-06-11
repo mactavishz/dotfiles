@@ -7,9 +7,6 @@ vim.g.maplocalleader = " "
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Quick operations on buffers
--- vim.keymap.set("n", "<leader>c", function()
---     G_CLOSE_BUFFER()
--- end)
 vim.keymap.set("n", "<leader>w", function()
     vim.cmd.write({ bang = true })
 end)

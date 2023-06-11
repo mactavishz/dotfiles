@@ -5,11 +5,14 @@ end
 
 bufferline.setup({
     icons = {
-       pinned = {
-           button = '車',
-       },
+        pinned = {
+            button = '',
+        },
     },
-    animation = true
+    animation = true,
+    sidebar_filetypes = {
+        ['neo-tree'] = { event = 'BufWipeout', text = nil },
+    },
 })
 
 local opts = { noremap = true, silent = true }
@@ -36,4 +39,4 @@ vim.keymap.set('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
 -- Pin/unpin buffer
 vim.keymap.set('n', '<leader>bb', '<Cmd>BufferPin<CR>', opts)
 -- Close buffer
-vim.keymap.set('n', '<leader>bc', '<Cmd>BufferClose<CR>', opts)
+vim.keymap.set('n', '<leader>c', '<Cmd>BufferClose<CR>', opts)

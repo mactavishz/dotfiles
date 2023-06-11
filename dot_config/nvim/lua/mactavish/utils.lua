@@ -19,3 +19,50 @@ function G_CLOSE_BUFFER (force)
    local close_cmd = force and ":bd!" or ":bp | bd" .. vim.fn.bufnr()
    vim.cmd(close_cmd)
 end
+
+M = {}
+
+M.lspkind = {
+    Namespace = "󰌗",
+    Text = "󰉿",
+    Method = "󰆧",
+    Function = "󰆧",
+    Constructor = "",
+    Field = "󰜢",
+    Variable = "󰀫",
+    Class = "󰠱",
+    Interface = "",
+    Module = "",
+    Property = "󰜢",
+    Unit = "󰑭",
+    Value = "󰎠",
+    Enum = "",
+    Keyword = "󰌋",
+    Snippet = "",
+    Color = "󰏘",
+    File = "󰈚",
+    Reference = "󰈇",
+    Folder = "󰉋",
+    EnumMember = "",
+    Constant = "󰏿",
+    Struct = "󰙅",
+    Event = "",
+    Operator = "󰆕",
+    TypeParameter = "󰊄",
+    Table = "",
+    Object = "󰅩",
+    Tag = "",
+    Array = "[]",
+    Boolean = "",
+    Number = "",
+    Null = "󰟢",
+    String = "󰉿",
+    Calendar = "",
+    Watch = "󰥔",
+    Package = "",
+    Copilot = "",
+    Codeium = "",
+    TabNine = "",
+}
+
+return M
