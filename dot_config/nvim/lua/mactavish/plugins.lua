@@ -26,6 +26,8 @@ lazy.setup({
     'tpope/vim-sleuth',
     'tpope/vim-repeat',
 
+    'christoomey/vim-tmux-navigator',
+
     -- Telescope
     {
         'nvim-telescope/telescope.nvim',
@@ -59,8 +61,6 @@ lazy.setup({
     },
 
     'nvim-treesitter/playground',
-    -- Buffer mark and navigation
-    'theprimeagen/harpoon',
     -- Undo history
     'mbbill/undotree',
     -- Colorschemes
@@ -116,7 +116,10 @@ lazy.setup({
     -- Bufferline alternative
     {
         'romgrk/barbar.nvim',
-        dependencies = 'nvim-tree/nvim-web-devicons'
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+            'lewis6991/gitsigns.nvim'
+        }
     },
     'nvim-lualine/lualine.nvim',
     'gpanders/editorconfig.nvim',

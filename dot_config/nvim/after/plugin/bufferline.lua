@@ -4,9 +4,24 @@ if not status_ok then
 end
 
 bufferline.setup({
+    tabpages = true,
     icons = {
+        buffer_index = true,
         pinned = {
-            button = '',
+            button = '󰐃',
+        },
+        button = '',
+        -- Enables / disables diagnostic symbols
+        diagnostics = {
+            [vim.diagnostic.severity.ERROR] = { enabled = true, icon = ' ' },
+            [vim.diagnostic.severity.WARN] = { enabled = true },
+            [vim.diagnostic.severity.INFO] = { enabled = true },
+            [vim.diagnostic.severity.HINT] = { enabled = true },
+        },
+        gitsigns = {
+            added = { enabled = true, icon = '+' },
+            changed = { enabled = true, icon = '~' },
+            deleted = { enabled = true, icon = '-' },
         },
     },
     animation = true,
