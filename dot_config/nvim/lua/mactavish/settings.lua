@@ -17,6 +17,7 @@ vim.opt.showmode = false                        -- we don't need to see things l
 
 vim.opt.splitbelow = true                       -- force all horizontal splits to go below current window
 vim.opt.splitright = true                       -- force all vertical splits to go to the right of current window
+vim.opt.showtabline = 0                         -- disable tabline
 
 vim.opt.backup = false                          -- creates a backup file
 vim.opt.swapfile = false

@@ -20,8 +20,17 @@ configs.setup {
     "yaml",
     "vim",
     "vimdoc",
-    "tsx"
-  },                    -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    "tsx",
+    "regex",
+    "markdown",
+    "markdown_inline"
+  },
+  autotag = {
+    enable = true,
+  },
+  context_commentstring = {
+    enable = true,
+  },
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   auto_isntall = true,
   autopairs = {

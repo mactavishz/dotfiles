@@ -47,17 +47,87 @@ lazy.setup({
         'nvim-treesitter/nvim-treesitter',
         dependencies = {
             'nvim-treesitter/nvim-treesitter-textobjects',
+            'JoosepAlviste/nvim-ts-context-commentstring'
         },
         build = ':TSUpdate',
     },
 
     {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
+        'stevearc/oil.nvim',
+        opts = {},
+        -- Optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
+
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opt = {},
         dependencies = {
-            "nvim-lua/plenary.nvim",
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
             "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            {
+                "rcarriga/nvim-notify",
+                config = function()
+                    require('notify').setup({
+                        render = "default",
+                        timeout = 1500,
+                        stages = "static",
+                    })
+                end,
+            }
         }
+    },
+
+    {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        opts = {},
+        keys = {
+            {
+                "s",
+                mode = { "n", "x", "o" },
+                function()
+                    require("flash").jump()
+                end,
+                desc = "Flash",
+            },
+            {
+                "S",
+                mode = { "n", "o", "x" },
+                function()
+                    require("flash").treesitter()
+                end,
+                desc = "Flash Treesitter",
+            },
+            {
+                "r",
+                mode = "o",
+                function()
+                    require("flash").remote()
+                end,
+                desc = "Remote Flash",
+            },
+            {
+                "R",
+                mode = { "o", "x" },
+                function()
+                    require("flash").treesitter_search()
+                end,
+                desc = "Flash Treesitter Search",
+            },
+            {
+                "<c-s>",
+                mode = { "c" },
+                function()
+                    require("flash").toggle()
+                end,
+                desc = "Toggle Flash Search",
+            },
+        },
     },
 
     'nvim-treesitter/playground',
@@ -76,11 +146,6 @@ lazy.setup({
             -- Automatically install LSPs to stdpath for neovim
             { 'williamboman/mason.nvim', config = true },
             'williamboman/mason-lspconfig.nvim',
-
-            -- Useful status updates for LSP
-            -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-            { 'j-hui/fidget.nvim',       opts = {} },
-
             -- Additional lua configuration, makes nvim stuff amazing!
             'folke/neodev.nvim',
         },
@@ -109,18 +174,10 @@ lazy.setup({
         },
     },
 
-    'nvim-lua/popup.nvim',
     'windwp/nvim-autopairs',
+    'windwp/nvim-ts-autotag',
     'numToStr/Comment.nvim',
     'nvim-tree/nvim-web-devicons',
-    -- Bufferline alternative
-    {
-        'romgrk/barbar.nvim',
-        dependencies = {
-            'nvim-tree/nvim-web-devicons',
-            'lewis6991/gitsigns.nvim'
-        }
-    },
     'nvim-lualine/lualine.nvim',
     'gpanders/editorconfig.nvim',
     'lewis6991/impatient.nvim',
@@ -136,10 +193,8 @@ lazy.setup({
             })
         end
     },
-    'ggandor/leap.nvim',
 
     'ThePrimeagen/vim-be-good',
-    'olimorris/persisted.nvim',
 
     -- for formatters and linters
     'jose-elias-alvarez/null-ls.nvim',
@@ -147,6 +202,7 @@ lazy.setup({
         'folke/trouble.nvim',
         dependencies = 'nvim-tree/nvim-web-devicons'
     },
+    
     {
         "folke/todo-comments.nvim",
         dependencies = "nvim-lua/plenary.nvim",
