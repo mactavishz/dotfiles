@@ -1,0 +1,17 @@
+# User defined alias
+alias vim="nvim"
+alias vi="nvim"
+alias v="nvim"
+alias vf='fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim'
+alias ls='ls --color'
+alias ll="ls -lha"
+alias c="clear"
+alias time="gtime"
+alias lg="lazygit"
+alias lzd="lazydocker"
+alias vrc="$EDITOR $HOME/.zshrc"
+alias yz="yazi"
+alias mx="mise x"
+alias mr="mise r"
+alias -- -='cd -'
+alias ..='cd ..'
