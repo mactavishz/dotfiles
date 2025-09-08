@@ -12,6 +12,13 @@ if [ ! -d "$ZINIT_HOME" ]; then
    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
+# Download TPM, if it's not there yet
+TPM_HOME="${XDG_DATA_HOME:-${HOME}/.tmux/plugins/tpm}"
+if [ ! -d "$TPM_HOME" ]; then
+  mkdir -p "$TPM_HOME" 
+  git clone https://github.com/tmux-plugins/tpm "$TPM_HOME"
+fi
+
 # Source/Load zinit
 declare -A ZINIT
 ZINIT[NO_ALIASES]=1
