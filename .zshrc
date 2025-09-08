@@ -97,19 +97,24 @@ take () {
     mkdir -p "$1" && cd "$1"
 }
 
+# Host-specific configs
+if [ -f "$HOME/.config/host/init.zsh" ]; then
+  source "$HOME/.config/host/init.zsh"
+fi
+
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '~/google-cloud-sdk/path.zsh.inc' ]; then
-  source '~/google-cloud-sdk/path.zsh.inc';
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
+  source "$HOME/google-cloud-sdk/path.zsh.inc";
 fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '~/google-cloud-sdk/completion.zsh.inc' ]; then
-  source '~/google-cloud-sdk/completion.zsh.inc';
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then
+  source "$HOME/google-cloud-sdk/completion.zsh.inc";
 fi
 
 # ghcup
-if [ -f "~/.ghcup/env" ]; then
-  source "~/.ghcup/env";
+if [ -f "$HOME/.ghcup/env" ]; then
+  source "$HOME/.ghcup/env";
 fi
 
 # See: https://github.com/starship/starship/issues/3418#issuecomment-2477375663
