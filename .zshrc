@@ -121,7 +121,7 @@ fi
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
-eval "$(~/.local/bin/mise activate zsh)"
+eval "$(mise activate zsh)"
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
