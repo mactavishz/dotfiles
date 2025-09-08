@@ -18,24 +18,16 @@ ZINIT[NO_ALIASES]=1
 source "${ZINIT_HOME}/zinit.zsh"
 
 export LANG=en_US.UTF-8
+export CLICOLOR=1
 export VISUAL=nvim;
 export EDITOR=nvim;
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH"
-export PATH="/opt/homebrew/opt/bison/bin:$PATH"
-export CLICOLOR=1
 export GOPATH="$HOME/go"
 export GOPROXY="https://proxy.golang.org,direct"
 export PATH="$PATH:$GOPATH/bin"
-export CDPATH="$HOME:$HOME/Dev:$HOME/Library/CloudStorage/OneDrive-Personal"
 export BAT_THEME="base16-256"  
-export KUBECONFIG="${KUBECONFIG}:${HOME}/.kube/config.yaml"
 export PNPM_HOME="$HOME/Library/pnpm"
-export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 export PATH="$PNPM_HOME:$PATH"
-export KUBECONFIG="$HOME/.kube/config"
-
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -64,7 +56,7 @@ zinit cdreplay -q
 
 # in bash: set -o vi
 bindkey -v '^?' backward-delete-char
-bindkey '^ ' autosuggest-accept
+bindkey '\t\t' autosuggest-accept
 bindkey '^e' autosuggest-execute
 # bindkey '^u' autosuggest-toggle
 
@@ -84,14 +76,12 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-
 
 take () {
     mkdir -p "$1" && cd "$1"
@@ -100,21 +90,6 @@ take () {
 # Host-specific configs
 if [ -f "$HOME/.config/host/init.zsh" ]; then
   source "$HOME/.config/host/init.zsh"
-fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
-  source "$HOME/google-cloud-sdk/path.zsh.inc";
-fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then
-  source "$HOME/google-cloud-sdk/completion.zsh.inc";
-fi
-
-# ghcup
-if [ -f "$HOME/.ghcup/env" ]; then
-  source "$HOME/.ghcup/env";
 fi
 
 # See: https://github.com/starship/starship/issues/3418#issuecomment-2477375663
