@@ -63,7 +63,7 @@ zinit cdreplay -q
 
 # in bash: set -o vi
 bindkey -v '^?' backward-delete-char
-bindkey '\t\t' autosuggest-accept
+bindkey '^y' autosuggest-accept
 bindkey '^e' autosuggest-execute
 # bindkey '^u' autosuggest-toggle
 
