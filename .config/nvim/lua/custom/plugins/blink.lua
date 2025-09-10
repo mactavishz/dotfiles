@@ -134,10 +134,10 @@ return {
     },
 
     sources = {
-      default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
+      default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot', 'lazydev' },
       providers = {
         lazydev = {
-          name = 'LazyDev',
+          name = 'Lazydev',
           module = 'lazydev.integrations.blink',
           -- make lazydev completions top priority (see `:h blink.cmp`)
           score_offset = 100,
