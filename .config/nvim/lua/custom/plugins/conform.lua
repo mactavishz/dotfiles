@@ -31,11 +31,11 @@ return { -- Autoformat
     --     lsp_format = lsp_format_opt,
     --   }
     -- end,
-    format_on_save = {
-      -- I recommend these options. See :help conform.format for details.
-      lsp_format = 'fallback',
-      timeout_ms = 2500,
-    },
+    -- format_on_save = {
+    --   -- I recommend these options. See :help conform.format for details.
+    --   lsp_format = 'fallback',
+    --   timeout_ms = 2500,
+    -- },
     formatters_by_ft = {
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
