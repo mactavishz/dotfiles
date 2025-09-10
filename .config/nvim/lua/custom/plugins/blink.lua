@@ -86,6 +86,7 @@ return {
           treesitter = { 'lsp' },
           columns = {
             { 'kind_icon', 'label', 'label_description', gap = 1 },
+            { 'source_name', gap = 1 },
             { 'kind' },
           },
           components = {
