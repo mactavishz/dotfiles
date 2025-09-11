@@ -1,6 +1,13 @@
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+vim.g.have_nerd_font = true
+
 -- Make line numbers default
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -77,3 +84,25 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- Treat .proto files as plain text
+-- temporary fix for proto files, since there is not a proper language server for it
+vim.filetype.add {
+  extension = {
+    proto = 'text',
+  },
+}
+
+vim.filetype.add {
+  extension = {
+    env = 'dotenv',
+  },
+  filename = {
+    ['.env'] = 'dotenv',
+    ['env'] = 'dotenv',
+  },
+  pattern = {
+    ['[jt]sconfig.*.json'] = 'jsonc',
+    ['%.env%.[%w_.-]+'] = 'dotenv',
+  },
+}
