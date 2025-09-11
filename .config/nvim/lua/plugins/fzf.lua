@@ -27,8 +27,13 @@ return {
       },
       buffers = {
         actions = {
-          ['ctrl-d'] = { fzf_lua.actions.buf_del, fzf_lua.actions.resume },
-          ['ctrl-x'] = fzf_lua.actions.buf_split,
+          -- actions inherit from 'actions.files' and merge
+          -- by supplying a table of functions we're telling
+          -- fzf-lua to not close the fzf window, this way we
+          -- can resume the buffers picker on the same window
+          -- eliminating an otherwise unaesthetic win "flash"
+          ['ctrl-x'] = false,
+          ['ctrl-d'] = { fn = fzf_lua.actions.buf_del, reload = true },
         },
       },
     }
