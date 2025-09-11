@@ -41,7 +41,7 @@ return {
   },
 
   -- use a release tag to download pre-built binaries
-  version = 'v1.*',
+  version = '*',
   opts = {
     keymap = {
       -- preset = 'default',

@@ -191,6 +191,17 @@ require('lazy').setup({
 
       -- More about how to set up lsps in neovim >= 0.11
       -- See: https://gpanders.com/blog/whats-new-in-neovim-0-11/
+      vim.lsp.enable {
+        'clangd',
+        'gopls',
+        'bashls',
+        'pyright',
+        'ruff',
+        'rust_analyzer',
+        'ts_ls',
+        'yamlls',
+        'lua_ls',
+      }
     end,
   },
 
