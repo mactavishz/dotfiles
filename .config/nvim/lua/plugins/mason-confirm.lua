@@ -3,7 +3,7 @@ return {
   'zapling/mason-conform.nvim',
   cond = vim.g.vscode == nil,
   dependencies = {
-    'williamboman/mason.nvim',
+    'mason-org/mason.nvim',
     'stevearc/conform.nvim',
   },
   opts = {},
