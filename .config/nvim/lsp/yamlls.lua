@@ -21,11 +21,8 @@ return {
       hover = true,
       validate = true,
       schemaStore = {
-        -- Must disable built-in schemaStore support to use
-        -- schemas from SchemaStore.nvim plugin
-        enable = false,
-        -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
-        url = '',
+        enable = true,
+        url = 'https://www.schemastore.org/api/json/catalog.json',
       },
       schemas = {
         ['kubernetes'] = { '*.yaml', '*.yml' },
