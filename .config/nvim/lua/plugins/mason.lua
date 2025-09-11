@@ -1,13 +1,11 @@
 return {
   'mason-org/mason-lspconfig.nvim',
-  opts = {},
   dependencies = {
+    -- With this we don't have to call require("mason").setup()
     { 'mason-org/mason.nvim', opts = {} },
     {
       'neovim/nvim-lspconfig',
       dependencies = {
-        -- Useful status updates for LSP.
-        -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
         { 'j-hui/fidget.nvim', opts = {} },
       },
     },
