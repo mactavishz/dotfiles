@@ -67,6 +67,9 @@ bindkey '^y' autosuggest-accept
 bindkey '^e' autosuggest-execute
 # bindkey '^u' autosuggest-toggle
 
+# Completions
+source <(kubectl completion zsh)
+
 # load alias file
 source ~/.config/aliases
 
