@@ -56,8 +56,8 @@ zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
-# Basic auto/tab complete:
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+compinit
 
 zinit cdreplay -q
 
