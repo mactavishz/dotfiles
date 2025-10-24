@@ -3,7 +3,7 @@ return {
   cond = vim.g.vscode == nil,
   lazy = false,
   keys = {
-    { '<leader>fs', '<cmd>SessionSearch<CR>', desc = 'Session search' },
+    { '<leader>fs', '<cmd>AutoSession search<CR>', desc = 'Session search' },
   },
   ---enables autocomplete for opts
   ---@module "auto-session"
