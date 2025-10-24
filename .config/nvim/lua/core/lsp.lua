@@ -10,6 +10,7 @@ vim.lsp.enable {
   'ts_ls',
   'yamlls',
   'lua_ls',
+  'texlab'
 }
 
 -- Diagnostic Config
