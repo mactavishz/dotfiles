@@ -12,6 +12,9 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- Treat '-' and '_' as word separators so 'foo-bar' and 'foo_bar' count as two words
+vim.opt.iskeyword:remove({'_', '-'})
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
