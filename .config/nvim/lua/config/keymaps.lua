@@ -52,11 +52,12 @@ if not is_vscode then
   vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
   -- buffers
-  vim.api.nvim_set_keymap('n', ';k', ':blast<enter>', { noremap = false })
-  vim.api.nvim_set_keymap('n', ';j', ':bfirst<enter>', { noremap = false })
-  vim.api.nvim_set_keymap('n', ';h', ':bprev<enter>', { noremap = false })
-  vim.api.nvim_set_keymap('n', ';l', ':bnext<enter>', { noremap = false })
-  vim.api.nvim_set_keymap('n', ';d', ':bdelete<enter>', { noremap = false })
+  -- disabled temporarily because they are conflicted with the arrow plugin
+  -- vim.api.nvim_set_keymap('n', ';k', ':blast<enter>', { noremap = false })
+  -- vim.api.nvim_set_keymap('n', ';j', ':bfirst<enter>', { noremap = false })
+  -- vim.api.nvim_set_keymap('n', ';h', ':bprev<enter>', { noremap = false })
+  -- vim.api.nvim_set_keymap('n', ';l', ':bnext<enter>', { noremap = false })
+  -- vim.api.nvim_set_keymap('n', ';d', ':bdelete<enter>', { noremap = false })
 
   -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
   -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
