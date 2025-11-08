@@ -1,19 +1,10 @@
 -- More about how to set up lsps in neovim >= 0.11
 -- See: https://gpanders.com/blog/whats-new-in-neovim-0-11/
-vim.lsp.enable {
-  'clangd',
-  'gopls',
-  'bashls',
-  'pyright',
-  'ruff',
-  'rust_analyzer',
-  'ts_ls',
-  'yamlls',
-  'lua_ls',
-  'texlab',
-  'ruby_lsp',
-  'marksman'
-}
+-- Automatically detect and enable LSPs from lsp folder
+local lsp_utils = require('utils.lsp_utils')
+local lsp_list = lsp_utils.get_lsp_enable_list()
+
+vim.lsp.enable(lsp_list)
 
 -- Diagnostic Config
 -- See :help vim.diagnostic.Opts

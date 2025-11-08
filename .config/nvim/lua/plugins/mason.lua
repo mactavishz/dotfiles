@@ -11,18 +11,10 @@ return {
     },
   },
   config = function()
-    -- matches the lsp configs in the lsp folder
-    local ensure_installed = {
-      'clangd',
-      'gopls',
-      'bashls',
-      'pyright',
-      'ruff',
-      'rust_analyzer',
-      'ts_ls',
-      'yamlls',
-      'lua_ls',
-    }
+    -- Automatically detect LSP configs from lsp folder
+    local lsp_utils = require('utils.lsp_utils')
+    local ensure_installed = lsp_utils.get_mason_lsp_list()
+    
     require('mason-lspconfig').setup {
       ensure_installed = ensure_installed,
       automatic_enable = true, -- Mason-LSPConfig v2 auto-enables servers by default
