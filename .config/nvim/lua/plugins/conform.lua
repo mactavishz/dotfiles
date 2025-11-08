@@ -67,6 +67,8 @@ return {
         yaml = { 'yamlfix' },
 
         sh = { 'shfmt' },
+        ['markdown'] = { 'prettierd' },
+        ['markdown.mdx'] = { 'prettierd' },
       },
     },
   },
