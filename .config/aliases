@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # User defined alias
 alias vim="nvim"
 alias vi="nvim"
@@ -16,3 +18,12 @@ alias mx="mise x"
 alias mr="mise r"
 alias -- -='cd -'
 alias ..='cd ..'
+
+portpid() {
+  # Check if the second argument is exactly "-v"
+  if [ "$2" = "-v" ]; then
+    lsof -iTCP:"$1" -sTCP:LISTEN -n -P
+  else
+    lsof -iTCP:"$1" -sTCP:LISTEN -n -P -t
+  fi
+}
