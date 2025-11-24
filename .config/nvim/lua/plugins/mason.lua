@@ -1,23 +1,24 @@
+-- Thanks to: https://www.youtube.com/watch?v=yI9R13h9IEE
 return {
-  'mason-org/mason-lspconfig.nvim',
+  'WhoIsSethDaniel/mason-tool-installer.nvim',
   dependencies = {
-    -- With this we don't have to call require("mason").setup()
-    { 'mason-org/mason.nvim', opts = {} },
     {
       'neovim/nvim-lspconfig',
       dependencies = {
         { 'j-hui/fidget.nvim', opts = {} },
       },
     },
+    -- With this we don't have to call require("mason").setup()
+    { 'mason-org/mason.nvim', opts = {} },
+    -- With this we don't have to call require("mason-lspconfig").setup()
+    { 'mason-org/mason-lspconfig.nvim', opts = {} },
   },
   config = function()
     -- Automatically detect LSP configs from lsp folder
-    local lsp_utils = require('utils.lsp_utils')
-    local ensure_installed = lsp_utils.get_mason_lsp_list()
+    local ensure_installed = require('core.lsp').lsp_list
     
-    require('mason-lspconfig').setup {
-      ensure_installed = ensure_installed,
-      automatic_enable = true, -- Mason-LSPConfig v2 auto-enables servers by default
+    require('mason-tool-installer').setup {
+      ensure_installed = vim.tbl_deep_extend('force', ensure_installed, {})
     }
   end,
 }
