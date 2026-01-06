@@ -35,6 +35,7 @@ export PATH="$PATH:$GOPATH/bin"
 export BAT_THEME="base16-256"  
 export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
