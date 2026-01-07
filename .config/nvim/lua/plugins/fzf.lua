@@ -66,7 +66,7 @@ return {
     map('n', '<leader>ff', fzf_lua.files, { desc = '[F]ind [F]iles' })
     map('n', '<leader>fw', fzf_lua.grep_cword, { desc = '[F]ind current [W]ord' })
     map('n', '<leader>fg', fzf_lua.git_files, { desc = '[F]ind by [g]it' })
-    map('n', '<leader>gg', fzf_lua.live_grep, { desc = '[F]ind by [G]rep' })
+    map('n', '<leader>fz', fzf_lua.live_grep, { desc = '[F]u[z]zy find' })
     map('n', '<leader>fd', fzf_lua.diagnostics_document, { desc = '[F]ind [D]iagnostics' })
     map('n', '<leader>f.', fzf_lua.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
     map('n', '<space><space>', fzf_lua.buffers, { desc = '[F]ind existing buffers' })

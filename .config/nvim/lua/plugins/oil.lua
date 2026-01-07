@@ -5,7 +5,10 @@ return {
   opts = {},
   cond = vim.g.vscode == nil,
   -- Optional dependencies
-  dependencies = { { 'echasnovski/mini.icons', opts = {} } },
+  dependencies = {
+    { 'echasnovski/mini.icons', opts = {} },
+    'refractalize/oil-git-status.nvim',
+  },
   -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
   config = function()
     local oil = require 'oil'
@@ -21,6 +24,7 @@ return {
         end,
       },
       win_options = {
+        signcolumn = 'yes:2',
         wrap = true,
       },
       keymaps = {
@@ -30,6 +34,9 @@ return {
       },
     }
 
+    require('oil-git-status').setup {
+      show_ignored = false,
+    }
     vim.keymap.set('n', '-', oil.toggle_float, { desc = 'Open oil in parent directory' })
   end,
 }

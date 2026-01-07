@@ -1,5 +1,6 @@
 return {
   'NickvanDyke/opencode.nvim',
+  cond = vim.g.vscode == nil,
   dependencies = {
     -- Recommended for `ask()` and `select()`.
     -- Required for `snacks` provider.
