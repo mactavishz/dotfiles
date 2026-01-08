@@ -78,6 +78,9 @@ return {
     { '<leader>f.', function() Snacks.picker.recent() end, desc = '[F]ind Recent Files ("." for repeat)' },
     { '<space><space>', function() Snacks.picker.buffers() end, desc = '[F]ind existing buffers' },
     { '<leader>/', function() Snacks.picker.lines() end, desc = '[/] Fuzzily search in current buffer' },
+
+    -- Others, tools
+    { "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit" },
   },
   init = function()
     vim.api.nvim_create_autocmd('User', {
