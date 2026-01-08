@@ -11,7 +11,9 @@ return {
     dashboard = { enabled = false },
     explorer = { enabled = false },
     indent = { enabled = false },
-    picker = { enabled = false },
+    picker = {
+      enabled = true,
+    },
     bigfile = { enabled = true },
     input = { enabled = true },
     notifier = {
@@ -50,6 +52,26 @@ return {
         }
       end,
     },
+    -- Picker/LSP mappings
+    { 'gd', function() Snacks.picker.lsp_definitions() end, desc = '[G]oto [D]efinition' },
+    { 'gD', function() Snacks.picker.lsp_declarations() end, desc = '[G]oto [D]efinition' },
+    { 'gr', function() Snacks.picker.lsp_references() end, desc = '[G]oto [R]eferences', nowait = true },
+    { 'gI', function() Snacks.picker.lsp_implementations() end, desc = '[G]oto [I]mplementation' },
+    { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+    { "gai", function() Snacks.picker.lsp_incoming_calls() end, desc = "C[a]lls Incoming" },
+    { "gao", function() Snacks.picker.lsp_outgoing_calls() end, desc = "C[a]lls Outgoing" },
+    { '<leader>ds', function() Snacks.picker.lsp_symbols() end, desc = '[D]ocument [S]ymbols' },
+    { '<leader>ws', function() Snacks.picker.lsp_workspace_symbols() end, desc = '[W]orkspace [S]ymbols' },
+    { '<leader>fh', function() Snacks.picker.help() end, desc = '[F]ind [H]elp' },
+    { '<leader>fk', function() Snacks.picker.keymaps() end, desc = '[F]ind [K]eymaps' },
+    { '<leader>ff', function() Snacks.picker.files() end, desc = '[F]ind [F]iles' },
+    { '<leader>fw', function() Snacks.picker.grep_word() end, desc = '[F]ind current [W]ord' },
+    { '<leader>fg', function() Snacks.picker.git_files() end, desc = '[F]ind by [g]it' },
+    { '<leader>fz', function() Snacks.picker.grep() end, desc = '[F]u[z]zy find' },
+    { '<leader>fd', function() Snacks.picker.diagnostics_buffer() end, desc = '[F]ind [D]iagnostics' },
+    { '<leader>f.', function() Snacks.picker.recent() end, desc = '[F]ind Recent Files ("." for repeat)' },
+    { '<space><space>', function() Snacks.picker.buffers() end, desc = '[F]ind existing buffers' },
+    { '<leader>/', function() Snacks.picker.lines() end, desc = '[/] Fuzzily search in current buffer' },
   },
   init = function()
     vim.api.nvim_create_autocmd('User', {
