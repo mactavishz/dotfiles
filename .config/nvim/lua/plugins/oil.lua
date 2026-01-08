@@ -9,7 +9,6 @@ return {
     { 'echasnovski/mini.icons', opts = {} },
     'refractalize/oil-git-status.nvim',
   },
-  -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
   config = function()
     local oil = require 'oil'
     oil.setup {
