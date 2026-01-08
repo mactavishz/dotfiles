@@ -1,5 +1,6 @@
 return {
   'folke/snacks.nvim',
+  ---@module 'snacks'
   priority = 1000,
   lazy = false,
   -- cond = vim.g.vscode == nil,
@@ -25,6 +26,11 @@ return {
     scroll = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
+    styles = {
+      notification = {
+        wo = { wrap = true } -- Wrap notifications
+      }
+    }
   },
   keys = {
     {
