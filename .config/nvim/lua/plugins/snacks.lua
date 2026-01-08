@@ -3,7 +3,7 @@ return {
   ---@module 'snacks'
   priority = 1000,
   lazy = false,
-  -- cond = vim.g.vscode == nil,
+  cond = vim.g.vscode == nil,
   ---@type snacks.Config
   opts = {
     -- your configuration comes here
