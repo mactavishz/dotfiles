@@ -2,7 +2,7 @@ return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    branch = 'main',
+    branch = 'master',
     lazy = false,
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     config = function()
@@ -24,7 +24,6 @@ return {
           'vimdoc',
           'astro',
           'css',
-          'latex',
         },
         -- Autoinstall languages that are not installed
         auto_install = true,
