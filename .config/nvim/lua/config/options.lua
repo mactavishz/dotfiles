@@ -25,11 +25,10 @@ vim.opt.showmode = false
 vim.opt.termguicolors = true
 
 -- Folding
--- vim.opt.foldcolumn = "1" -- '0' is not bad
--- vim.opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
--- vim.opt.foldlevelstart = 99
--- vim.opt.foldenable = false
--- vim.opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+vim.opt.foldcolumn = "1" -- '0' is not bad
+vim.opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
 
 -- Don't extend the comments when pressing `o` or `O` in normal mode
 vim.api.nvim_create_autocmd("FileType", {
