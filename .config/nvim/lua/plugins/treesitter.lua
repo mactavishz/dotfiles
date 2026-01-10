@@ -27,6 +27,7 @@ return {
         'astro',
         'css',
         'latex',
+        'json5',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,

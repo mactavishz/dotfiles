@@ -16,6 +16,7 @@ M.lsp_list = {
   'rust_analyzer',
   'texlab',
   'yamlls',
+  'jsonls',
   'marksman',
   'ansiblels',
 }
