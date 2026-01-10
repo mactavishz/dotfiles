@@ -1,3 +1,3 @@
-# Config.nvim
+# Neovim Configuration
 
-This is my personal Neovim configuration, based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+This is my personal Neovim configuration. Feel free to take it as a reference or inspiration for your own setup!
