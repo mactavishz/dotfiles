@@ -59,7 +59,8 @@ if not is_vscode then
   vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>", { desc = "Execute the current file" })
 
   -- Diagnostic keymaps
-  vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+  vim.keymap.set("n", "]g", vim.diagnostic.goto_next)
+  vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
 
   -- buffers
   -- disabled temporarily because they are conflicted with the arrow plugin
