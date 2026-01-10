@@ -26,8 +26,8 @@ return { -- Collection of various small independent plugins/modules
 
     -- Visualize and work with indent scope
     -- Checkout: https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-indentscope.md
-    require('mini.indentscope').setup {
-      symbol = '┊',
-    }
+    -- require('mini.indentscope').setup {
+    --   symbol = '┊',
+    -- }
   end,
 }

@@ -11,7 +11,7 @@ return {
     -- refer to the configuration section below
     dashboard = { enabled = false },
     explorer = { enabled = false },
-    indent = { enabled = false },
+    indent = { enabled = true },
     picker = {
       enabled = true,
     },
@@ -21,6 +21,19 @@ return {
       enabled = true,
       timeout = 3000,
     },
+    zen = {
+      enabled = true,
+      toggles = {
+        ufo = true,
+        dim = true,
+        git_signs = false,
+        diagnostics = false,
+        line_number = false,
+        relative_number = false,
+        signcolumn = 'no',
+        indent = false,
+      },
+    },
     quickfile = { enabled = true },
     scope = { enabled = true },
     scroll = { enabled = vim.g.vscode == nil },
@@ -28,9 +41,9 @@ return {
     words = { enabled = true },
     styles = {
       notification = {
-        wo = { wrap = true } -- Wrap notifications
-      }
-    }
+        wo = { wrap = true }, -- Wrap notifications
+      },
+    },
   },
   keys = {
     {
@@ -59,30 +72,193 @@ return {
       end,
     },
     -- Picker/LSP mappings
-    { 'gd', function() Snacks.picker.lsp_definitions() end, desc = '[G]oto [D]efinition' },
-    { 'gD', function() Snacks.picker.lsp_declarations() end, desc = '[G]oto [D]efinition' },
-    { 'gr', function() Snacks.picker.lsp_references() end, desc = '[G]oto [R]eferences', nowait = true },
-    { 'gI', function() Snacks.picker.lsp_implementations() end, desc = '[G]oto [I]mplementation' },
-    { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
-    { "gai", function() Snacks.picker.lsp_incoming_calls() end, desc = "C[a]lls Incoming" },
-    { "gao", function() Snacks.picker.lsp_outgoing_calls() end, desc = "C[a]lls Outgoing" },
-    { '<leader>ds', function() Snacks.picker.lsp_symbols() end, desc = '[D]ocument [S]ymbols' },
-    { '<leader>ws', function() Snacks.picker.lsp_workspace_symbols() end, desc = '[W]orkspace [S]ymbols' },
-    { '<leader>fh', function() Snacks.picker.help() end, desc = '[F]ind [H]elp' },
-    { '<leader>fk', function() Snacks.picker.keymaps() end, desc = '[F]ind [K]eymaps' },
-    { '<leader>ff', function() Snacks.picker.files() end, desc = '[F]ind [F]iles' },
-    { '<leader>fw', function() Snacks.picker.grep_word() end, desc = '[F]ind current [W]ord' },
-    { '<leader>fg', function() Snacks.picker.git_files() end, desc = '[F]ind by [g]it' },
-    { '<leader>fz', function() Snacks.picker.grep() end, desc = '[F]u[z]zy find' },
-    { '<leader>fd', function() Snacks.picker.diagnostics_buffer() end, desc = '[F]ind [D]iagnostics' },
-    { '<leader>f.', function() Snacks.picker.recent() end, desc = '[F]ind Recent Files ("." for repeat)' },
-    { '<space><space>', function() Snacks.picker.buffers() end, desc = '[F]ind existing buffers' },
-    { '<leader>/', function() Snacks.picker.lines() end, desc = '[/] Fuzzily search in current buffer' },
+    {
+      'gd',
+      function()
+        Snacks.picker.lsp_definitions()
+      end,
+      desc = '[G]oto [D]efinition',
+    },
+    {
+      'gD',
+      function()
+        Snacks.picker.lsp_declarations()
+      end,
+      desc = '[G]oto [D]efinition',
+    },
+    {
+      'gr',
+      function()
+        Snacks.picker.lsp_references()
+      end,
+      desc = '[G]oto [R]eferences',
+      nowait = true,
+    },
+    {
+      'gI',
+      function()
+        Snacks.picker.lsp_implementations()
+      end,
+      desc = '[G]oto [I]mplementation',
+    },
+    {
+      'gy',
+      function()
+        Snacks.picker.lsp_type_definitions()
+      end,
+      desc = 'Goto T[y]pe Definition',
+    },
+    {
+      'gai',
+      function()
+        Snacks.picker.lsp_incoming_calls()
+      end,
+      desc = 'C[a]lls Incoming',
+    },
+    {
+      'gao',
+      function()
+        Snacks.picker.lsp_outgoing_calls()
+      end,
+      desc = 'C[a]lls Outgoing',
+    },
+    {
+      '<leader>ds',
+      function()
+        Snacks.picker.lsp_symbols()
+      end,
+      desc = '[D]ocument [S]ymbols',
+    },
+    {
+      '<leader>ws',
+      function()
+        Snacks.picker.lsp_workspace_symbols()
+      end,
+      desc = '[W]orkspace [S]ymbols',
+    },
+    {
+      '<leader>fh',
+      function()
+        Snacks.picker.help()
+      end,
+      desc = '[F]ind [H]elp',
+    },
+    {
+      '<leader>fk',
+      function()
+        Snacks.picker.keymaps()
+      end,
+      desc = '[F]ind [K]eymaps',
+    },
+    {
+      '<leader>ff',
+      function()
+        Snacks.picker.files()
+      end,
+      desc = '[F]ind [F]iles',
+    },
+    {
+      '<leader>fw',
+      function()
+        Snacks.picker.grep_word()
+      end,
+      desc = '[F]ind current [W]ord',
+    },
+    {
+      '<leader>fg',
+      function()
+        Snacks.picker.git_files()
+      end,
+      desc = '[F]ind by [g]it',
+    },
+    {
+      '<leader>fz',
+      function()
+        Snacks.picker.grep()
+      end,
+      desc = '[F]u[z]zy find',
+    },
+    {
+      '<leader>fd',
+      function()
+        Snacks.picker.diagnostics_buffer()
+      end,
+      desc = '[F]ind [D]iagnostics',
+    },
+    {
+      '<leader>f.',
+      function()
+        Snacks.picker.recent()
+      end,
+      desc = '[F]ind Recent Files ("." for repeat)',
+    },
+    {
+      '<space><space>',
+      function()
+        Snacks.picker.buffers()
+      end,
+      desc = '[F]ind existing buffers',
+    },
+    {
+      '<leader>/',
+      function()
+        Snacks.picker.lines()
+      end,
+      desc = '[/] Fuzzily search in current buffer',
+    },
+
+    -- Buffers
+    {
+      '<leader>bd',
+      function()
+        Snacks.bufdelete()
+      end,
+      desc = 'Buffer delete',
+      mode = 'n',
+    },
+    {
+      '<leader>ba',
+      function()
+        Snacks.bufdelete.all()
+      end,
+      desc = 'Buffer delete all',
+      mode = 'n',
+    },
+    {
+      '<leader>bo',
+      function()
+        Snacks.bufdelete.other()
+      end,
+      desc = 'Buffer delete other',
+      mode = 'n',
+    },
+    {
+      '<leader>bz',
+      function()
+        Snacks.zen()
+      end,
+      desc = 'Toggle Zen Mode',
+      mode = 'n',
+    },
 
     -- Others, tools
-    { "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit" },
+    {
+      '<leader>lg',
+      function()
+        Snacks.lazygit()
+      end,
+      desc = 'Lazygit',
+    },
   },
   init = function()
+    vim.api.nvim_create_autocmd('User', {
+      pattern = 'OilActionsPost',
+      callback = function(event)
+        if event.data.actions.type == 'move' then
+          Snacks.rename.on_rename_file(event.data.actions.src_url, event.data.actions.dest_url)
+        end
+      end,
+    })
     vim.api.nvim_create_autocmd('User', {
       pattern = 'VeryLazy',
       callback = function()
@@ -111,5 +287,26 @@ return {
         Snacks.toggle.dim():map '<leader>uD'
       end,
     })
+  end,
+  config = function(_, opts)
+    require('snacks').setup(opts)
+    Snacks.toggle.new {
+      id = 'ufo',
+      name = 'Enable/Disable ufo',
+      get = function()
+        return require('ufo').inspect()
+      end,
+      set = function(state)
+        if state == nil then
+          require('ufo').enable()
+          vim.o.foldenable = true
+          vim.o.foldcolumn = '1'
+        else
+          require('ufo').disable()
+          vim.o.foldenable = false
+          vim.o.foldcolumn = '0'
+        end
+      end,
+    }
   end,
 }
