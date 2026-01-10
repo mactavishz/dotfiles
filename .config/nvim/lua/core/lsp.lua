@@ -4,35 +4,35 @@
 local M = {}
 
 M.lsp_list = {
-  'lua_ls',
-  'gopls',
-  'clangd',
-  'rust_analyzer',
-  'ts_ls',
-  'bashls',
-  'pyright',
-  'ruff',
-  'ruby_lsp',
-  'rust_analyzer',
-  'texlab',
-  'yamlls',
-  'jsonls',
-  'marksman',
-  'ansiblels',
+  "lua_ls",
+  "gopls",
+  "clangd",
+  "rust_analyzer",
+  "ts_ls",
+  "bashls",
+  "pyright",
+  "ruff",
+  "ruby_lsp",
+  "rust_analyzer",
+  "texlab",
+  "yamlls",
+  "jsonls",
+  "marksman",
+  "ansiblels",
 }
 
 -- Diagnostic Config
 -- See :help vim.diagnostic.Opts
-vim.diagnostic.config {
+vim.diagnostic.config({
   severity_sort = true,
-  float = { border = 'rounded', source = 'if_many' },
+  float = { border = "rounded", source = "if_many" },
   underline = { severity = vim.diagnostic.severity.ERROR },
   signs = vim.g.have_nerd_font and {
     text = {
-      [vim.diagnostic.severity.ERROR] = '󰅚 ',
-      [vim.diagnostic.severity.WARN] = '󰀪 ',
-      [vim.diagnostic.severity.INFO] = '󰋽 ',
-      [vim.diagnostic.severity.HINT] = '󰌶 ',
+      [vim.diagnostic.severity.ERROR] = "󰅚 ",
+      [vim.diagnostic.severity.WARN] = "󰀪 ",
+      [vim.diagnostic.severity.INFO] = "󰋽 ",
+      [vim.diagnostic.severity.HINT] = "󰌶 ",
     },
   } or {},
   -- virtual_text = {
@@ -48,6 +48,6 @@ vim.diagnostic.config {
   --     return diagnostic_message[diagnostic.severity]
   --   end,
   -- },
-}
+})
 
 return M

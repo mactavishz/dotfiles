@@ -1,32 +1,32 @@
 return {
   {
-    'zbirenbaum/copilot.lua',
-    cmd = 'Copilot',
-    event = 'InsertEnter',
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
     cond = vim.g.vscode == nil,
     config = function()
-      require('copilot').setup {
+      require("copilot").setup({
         suggestion = {
           enabled = false,
           auto_trigger = false,
           keymap = {
-            accept = '<M-l>',
+            accept = "<M-l>",
             accept_word = false,
             accept_line = false,
-            next = '<M-]>',
-            prev = '<M-[>',
-            dismiss = '<C-]>',
+            next = "<M-]>",
+            prev = "<M-[>",
+            dismiss = "<C-]>",
           },
         },
         panel = {
           enabled = false,
           auto_refresh = false,
           keymap = {
-            jump_prev = '[[',
-            jump_next = ']]',
-            accept = '<CR>',
-            refresh = 'gr',
-            open = '<M-CR>',
+            jump_prev = "[[",
+            jump_next = "]]",
+            accept = "<CR>",
+            refresh = "gr",
+            open = "<M-CR>",
           },
         },
         filetypes = {
@@ -38,9 +38,9 @@ return {
           hgcommit = false,
           svn = false,
           cvs = false,
-          ['.'] = false,
+          ["."] = false,
         },
-      }
+      })
 
       -- Start Copilot in disabled state
       -- vim.defer_fn(function()

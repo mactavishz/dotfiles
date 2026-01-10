@@ -1,33 +1,33 @@
 return {
   { -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    branch = 'main',
-    build = ':TSUpdate',
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    build = ":TSUpdate",
     lazy = false,
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
       ensure_installed = {
-        'go',
-        'gomod',
-        'gowork',
-        'gosum',
-        'rust',
-        'ruby',
-        'bash',
-        'c',
-        'diff',
-        'html',
-        'lua',
-        'luadoc',
-        'markdown',
-        'markdown_inline',
-        'query',
-        'vim',
-        'vimdoc',
-        'astro',
-        'css',
-        'latex',
-        'json5',
+        "go",
+        "gomod",
+        "gowork",
+        "gosum",
+        "rust",
+        "ruby",
+        "bash",
+        "c",
+        "diff",
+        "html",
+        "lua",
+        "luadoc",
+        "markdown",
+        "markdown_inline",
+        "query",
+        "vim",
+        "vimdoc",
+        "astro",
+        "css",
+        "latex",
+        "json5",
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
@@ -40,14 +40,14 @@ return {
       indent = { enable = true },
     },
     config = function(_, opts)
-      local TS = require 'nvim-treesitter'
+      local TS = require("nvim-treesitter")
       -- setup treesitter
       TS.setup(opts)
       TS.install(opts.ensure_installed, { summary = true })
 
       -- Enable treesitter features via FileType autocmd
-      vim.api.nvim_create_autocmd('FileType', {
-        group = vim.api.nvim_create_augroup('treesitter_features', { clear = true }),
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("treesitter_features", { clear = true }),
         callback = function(ev)
           local buf = ev.buf
           local ft = ev.match
@@ -66,8 +66,8 @@ return {
 
           -- Enable folds (set for current window)
           if opts.folds and opts.folds.enable then
-            vim.wo.foldmethod = 'expr'
-            vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+            vim.wo.foldmethod = "expr"
+            vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
           end
 
           -- Enable indentation
@@ -79,12 +79,12 @@ return {
     end,
   },
   {
-    'nvim-treesitter/nvim-treesitter-context',
-    event = 'VeryLazy',
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "VeryLazy",
     opts = function()
-      local tsc = require 'treesitter-context'
+      local tsc = require("treesitter-context")
       Snacks.toggle({
-        name = 'Treesitter Context',
+        name = "Treesitter Context",
         get = tsc.enabled,
         set = function(state)
           if state then
@@ -93,14 +93,14 @@ return {
             tsc.disable()
           end
         end,
-      }):map '<leader>ut'
-      return { mode = 'cursor', max_lines = 3 }
+      }):map("<leader>ut")
+      return { mode = "cursor", max_lines = 3 }
     end,
   },
   {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    branch = 'main',
-    event = 'VeryLazy',
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    branch = "main",
+    event = "VeryLazy",
     init = function()
       -- Disable entire built-in ftplugin mappings to avoid conflicts.
       -- See https://github.com/neovim/neovim/tree/master/runtime/ftplugin for built-in ftplugins.
@@ -118,20 +118,20 @@ return {
         set_jumps = true, -- whether to set jumps in the jumplist
         -- LazyVim extention to create buffer-local keymaps
         keys = {
-          goto_next_start = { [']f'] = '@function.outer', [']c'] = '@class.outer', [']a'] = '@parameter.inner' },
-          goto_next_end = { [']F'] = '@function.outer', [']C'] = '@class.outer', [']A'] = '@parameter.inner' },
-          goto_previous_start = { ['[f'] = '@function.outer', ['[c'] = '@class.outer', ['[a'] = '@parameter.inner' },
-          goto_previous_end = { ['[F'] = '@function.outer', ['[C'] = '@class.outer', ['[A'] = '@parameter.inner' },
+          goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer", ["]a"] = "@parameter.inner" },
+          goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer", ["]A"] = "@parameter.inner" },
+          goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer", ["[a"] = "@parameter.inner" },
+          goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer", ["[A"] = "@parameter.inner" },
         },
       },
     },
     config = function(_, opts)
-      local TS = require 'nvim-treesitter-textobjects'
+      local TS = require("nvim-treesitter-textobjects")
       TS.setup(opts)
     end,
   },
   {
-    'windwp/nvim-ts-autotag',
+    "windwp/nvim-ts-autotag",
     opts = {},
   },
 }

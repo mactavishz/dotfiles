@@ -1,10 +1,10 @@
 return {
-  'catppuccin/nvim',
-  name = 'catppuccin',
+  "catppuccin/nvim",
+  name = "catppuccin",
   cond = vim.g.vscode == nil,
   priority = 1000,
   opt = {
-    flavour = 'mocha',
+    flavour = "mocha",
     integrations = {
       cmp = true,
       blink_cmp = true,
@@ -13,11 +13,11 @@ return {
       notify = false,
       mini = {
         enabled = true,
-        indentscope_color = '',
+        indentscope_color = "",
       },
     },
   },
   init = function()
-    vim.cmd 'colorscheme catppuccin'
+    vim.cmd("colorscheme catppuccin")
   end,
 }

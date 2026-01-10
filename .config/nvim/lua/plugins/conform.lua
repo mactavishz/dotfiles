@@ -1,27 +1,27 @@
 return {
   {
     -- automatically install formatters defined in conform
-    'zapling/mason-conform.nvim',
+    "zapling/mason-conform.nvim",
     cond = vim.g.vscode == nil,
     dependencies = {
-      'mason-org/mason.nvim',
-      'stevearc/conform.nvim',
+      "mason-org/mason.nvim",
+      "stevearc/conform.nvim",
     },
     opts = {},
   },
   { -- Autoformat
-    'stevearc/conform.nvim',
-    event = { 'BufWritePre' },
-    cmd = { 'ConformInfo' },
+    "stevearc/conform.nvim",
+    event = { "BufWritePre" },
+    cmd = { "ConformInfo" },
     cond = vim.g.vscode == nil,
     keys = {
       {
-        '<leader>cf',
+        "<leader>cf",
         function()
-          require('conform').format { async = true, lsp_format = 'fallback', timeout_ms = 2500 }
+          require("conform").format({ async = true, lsp_format = "fallback", timeout_ms = 2500 })
         end,
-        mode = { 'n', 'v' },
-        desc = 'Format file or range (in visual mode)',
+        mode = { "n", "v" },
+        desc = "Format file or range (in visual mode)",
       },
     },
     opts = {
@@ -52,23 +52,23 @@ return {
         -- python = { "isort", "black" },
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
-        lua = { 'stylua' },
+        lua = { "stylua" },
         -- Conform will run multiple formatters sequentially
-        python = { 'ruff_format', lsp_format = 'fallback' },
+        python = { "ruff_format", lsp_format = "fallback" },
         -- You can customize some of the format options for the filetype (:help conform.format)
-        rust = { 'rustfmt', lsp_format = 'fallback' },
+        rust = { "rustfmt", lsp_format = "fallback" },
         -- Conform will run the first available formatter
-        javascript = { 'prettierd', 'prettier', stop_after_first = true },
+        javascript = { "prettierd", "prettier", stop_after_first = true },
 
-        astro = { 'prettier' },
+        astro = { "prettier" },
 
-        go = { 'goimports', 'gofmt' },
+        go = { "goimports", "gofmt" },
 
-        yaml = { 'yamlfix' },
+        yaml = { "yamlfix" },
 
-        sh = { 'shfmt' },
-        ['markdown'] = { 'prettierd' },
-        ['markdown.mdx'] = { 'prettierd' },
+        sh = { "shfmt" },
+        ["markdown"] = { "prettierd" },
+        ["markdown.mdx"] = { "prettierd" },
       },
     },
   },

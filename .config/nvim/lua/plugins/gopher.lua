@@ -1,8 +1,8 @@
 return {
   {
-    'olexsmir/gopher.nvim',
+    "olexsmir/gopher.nvim",
     cond = vim.g.vscode == nil,
-    ft = 'go',
+    ft = "go",
     -- branch = "develop"
     -- (optional) will update plugin's deps on every update
     build = function()
@@ -11,10 +11,10 @@ return {
     ---@type gopher.Config
     opts = {},
     keys = {
-      { '<leader>goat', ':GoTestAdd<cr>' },
-      { '<leader>got', ':GoTestsAll<cr>' },
-      { '<leader>goe', ':GoTestsExp<cr>' },
-      { '<leader>goj', ':GoTagsAdd json<cr>' },
+      { "<leader>goat", ":GoTestAdd<cr>" },
+      { "<leader>got", ":GoTestsAll<cr>" },
+      { "<leader>goe", ":GoTestsExp<cr>" },
+      { "<leader>goj", ":GoTagsAdd json<cr>" },
     },
   },
 }

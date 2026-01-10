@@ -1,17 +1,17 @@
 return {
   { -- Linting
-    'mfussenegger/nvim-lint',
+    "mfussenegger/nvim-lint",
     cond = vim.g.vscode == nil,
     opts = {
-      events = { 'BufReadPost', 'BufWritePost', 'InsertLeave' },
+      events = { "BufReadPost", "BufWritePost", "InsertLeave" },
       linters_by_ft = {
-        markdown = { 'markdownlint' },
-        go = { 'golangcilint' },
-        python = { 'ruff' },
+        markdown = { "markdownlint" },
+        go = { "golangcilint" },
+        python = { "ruff" },
       },
     },
     config = function(_, opts)
-      local lint = require 'lint'
+      local lint = require("lint")
 
       local M = {}
 
@@ -38,11 +38,11 @@ return {
 
         -- Add fallback linters.
         if #names == 0 then
-          vim.list_extend(names, lint.linters_by_ft['_'] or {})
+          vim.list_extend(names, lint.linters_by_ft["_"] or {})
         end
 
         -- Add global linters.
-        vim.list_extend(names, lint.linters_by_ft['*'] or {})
+        vim.list_extend(names, lint.linters_by_ft["*"] or {})
 
         -- Run linters.
         if #names > 0 then
@@ -50,7 +50,7 @@ return {
         end
       end
       vim.api.nvim_create_autocmd(opts.events, {
-        group = vim.api.nvim_create_augroup('nvim-lint', { clear = true }),
+        group = vim.api.nvim_create_augroup("nvim-lint", { clear = true }),
         callback = M.debounce(100, M.lint),
       })
 

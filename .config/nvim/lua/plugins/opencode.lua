@@ -1,44 +1,44 @@
 return {
-  'NickvanDyke/opencode.nvim',
+  "NickvanDyke/opencode.nvim",
   cond = vim.g.vscode == nil,
   dependencies = {
     -- Recommended for `ask()` and `select()`.
     -- Required for `snacks` provider.
     ---@module 'snacks' <- Loads `snacks.nvim` types for configuration intellisense.
-    { 'folke/snacks.nvim', opts = { input = {}, picker = {} } },
+    { "folke/snacks.nvim", opts = { input = {}, picker = {} } },
   },
   keys = {
     {
-      '<leader>oa',
+      "<leader>oa",
       function()
-        require('opencode').ask('', { submit = true })
+        require("opencode").ask("", { submit = true })
       end,
-      desc = 'Ask opencode',
-      mode = 'n',
+      desc = "Ask opencode",
+      mode = "n",
     },
     {
-      '<leader>oa',
+      "<leader>oa",
       function()
-        require('opencode').ask('@this: ', { submit = true })
+        require("opencode").ask("@this: ", { submit = true })
       end,
-      desc = 'Ask opencode about selection',
-      mode = 'v',
+      desc = "Ask opencode about selection",
+      mode = "v",
     },
     {
-      '<leader>ox',
+      "<leader>ox",
       function()
-        require('opencode').select()
+        require("opencode").select()
       end,
-      desc = 'Select opencode action',
-      mode = 'n',
+      desc = "Select opencode action",
+      mode = "n",
     },
     {
-      '<leader>oo',
+      "<leader>oo",
       function()
-        require('opencode').toggle()
+        require("opencode").toggle()
       end,
-      desc = 'Toggle opencode',
-      mode = 'n',
+      desc = "Toggle opencode",
+      mode = "n",
     },
   },
   config = function()
@@ -46,9 +46,9 @@ return {
     vim.g.opencode_opts = {
       -- Your configuration, if any — see `lua/opencode/config.lua`, or "goto definition".
       provider = {
-        enabled = 'tmux',
+        enabled = "tmux",
         tmux = {
-          options = '-h', -- Open in a horizontal split
+          options = "-h", -- Open in a horizontal split
         },
       },
     }

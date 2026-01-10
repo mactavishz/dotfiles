@@ -1,8 +1,8 @@
 return {
   settings = {
-    ['rust-analyzer'] = {
+    ["rust-analyzer"] = {
       check = {
-        command = 'clippy',
+        command = "clippy",
       },
       diagnostics = {
         enable = true,
@@ -10,4 +10,3 @@ return {
     },
   },
 }
-

@@ -7,7 +7,7 @@ return {
       analysis = {
         autoSearchPaths = true,
         useLibraryCodeForTypes = true,
-        diagnosticMode = 'openFilesOnly',
+        diagnosticMode = "openFilesOnly",
       },
     },
   },

@@ -1,19 +1,25 @@
 return {
-  'rachartier/tiny-code-action.nvim',
+  "rachartier/tiny-code-action.nvim",
   dependencies = {
-    { 'nvim-lua/plenary.nvim' },
+    { "nvim-lua/plenary.nvim" },
     {
-      'folke/snacks.nvim',
+      "folke/snacks.nvim",
       opts = {
         terminal = {},
       },
     },
   },
-  event = 'LspAttach',
+  event = "LspAttach",
   opts = {
-    picker = 'snacks',
+    picker = "snacks",
   },
   keys = {
-    { '<leader>ca', function() require('tiny-code-action').code_action() end, desc = 'Open Code Action' },
+    {
+      "<leader>ca",
+      function()
+        require("tiny-code-action").code_action()
+      end,
+      desc = "Open Code Action",
+    },
   },
 }

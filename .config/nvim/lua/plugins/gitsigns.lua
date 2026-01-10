@@ -4,7 +4,7 @@
 
 return {
   {
-    'lewis6991/gitsigns.nvim',
+    "lewis6991/gitsigns.nvim",
     lazy = false,
     cond = vim.g.vscode == nil,
     opts = {

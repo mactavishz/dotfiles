@@ -4,8 +4,8 @@
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 
 -- Make line numbers default
@@ -13,10 +13,10 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Treat '-' and '_' as word separators so 'foo-bar' and 'foo_bar' count as two words
-vim.opt.iskeyword:remove({'_', '-'})
+vim.opt.iskeyword:remove({ "_", "-" })
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -25,17 +25,17 @@ vim.opt.showmode = false
 vim.opt.termguicolors = true
 
 -- Folding
-vim.opt.foldcolumn = '1' -- '0' is not bad
-vim.opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-vim.opt.foldlevelstart = 99
-vim.opt.foldenable = false
-vim.opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+-- vim.opt.foldcolumn = "1" -- '0' is not bad
+-- vim.opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+-- vim.opt.foldlevelstart = 99
+-- vim.opt.foldenable = false
+-- vim.opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 -- Don't extend the comments when pressing `o` or `O` in normal mode
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = '*',
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
   callback = function()
-    vim.opt_local.formatoptions:remove { 'o' }
+    vim.opt_local.formatoptions:remove({ "o" })
   end,
 })
 
@@ -44,13 +44,13 @@ vim.api.nvim_create_autocmd('FileType', {
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
+  vim.opt.clipboard = "unnamedplus"
 end)
 
 -- Enable break indent
 vim.opt.breakindent = true
 vim.opt.linebreak = true
-vim.opt.showbreak = '↪'
+vim.opt.showbreak = "↪"
 
 -- Save undo history
 vim.opt.undofile = true
@@ -60,7 +60,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -77,10 +77,10 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars:append 'space:·'
-vim.opt.listchars:append 'tab:··'
+vim.opt.listchars:append("space:·")
+vim.opt.listchars:append("tab:··")
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
@@ -90,22 +90,22 @@ vim.opt.scrolloff = 10
 
 -- Treat .proto files as plain text
 -- temporary fix for proto files, since there is not a proper language server for it
-vim.filetype.add {
+vim.filetype.add({
   extension = {
-    proto = 'text',
+    proto = "text",
   },
-}
+})
 
-vim.filetype.add {
+vim.filetype.add({
   extension = {
-    env = 'dotenv',
+    env = "dotenv",
   },
   filename = {
-    ['.env'] = 'dotenv',
-    ['env'] = 'dotenv',
+    [".env"] = "dotenv",
+    ["env"] = "dotenv",
   },
   pattern = {
-    ['[jt]sconfig.*.json'] = 'jsonc',
-    ['%.env%.[%w_.-]+'] = 'dotenv',
+    ["[jt]sconfig.*.json"] = "jsonc",
+    ["%.env%.[%w_.-]+"] = "dotenv",
   },
-}
+})
