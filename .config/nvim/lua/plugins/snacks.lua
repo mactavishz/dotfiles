@@ -10,7 +10,7 @@ return {
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
     dashboard = { enabled = false },
-    explorer = { enabled = false },
+    explorer = { enabled = true },
     indent = { enabled = true },
     picker = {
       enabled = true,
@@ -46,6 +46,14 @@ return {
     },
   },
   keys = {
+    -- Top Pickers & Explorer
+    {
+      "<leader>e",
+      function()
+        Snacks.explorer()
+      end,
+      desc = "File Explorer",
+    },
     -- Picker/LSP mappings
     {
       "gd",
