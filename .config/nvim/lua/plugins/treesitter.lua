@@ -28,6 +28,7 @@ return {
         "css",
         "latex",
         "json5",
+        "regex",
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
