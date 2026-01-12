@@ -8,6 +8,7 @@ return {
         markdown = { "markdownlint" },
         go = { "golangcilint" },
         python = { "ruff" },
+        text = { "vale" },
       },
     },
     config = function(_, opts)
