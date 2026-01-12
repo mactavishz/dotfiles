@@ -1,0 +1,41 @@
+# Ghostty Terminal Configuration
+
+# Font configuration
+# font-family = "Symbols Nerd Font"
+# font-family = "Hack Nerd Font Mono"
+# font-family = "Fira Code"
+font-family = "JetBrains Mono"
+font-size = 20
+
+# Background
+# background-opacity = 0.9
+# background-blur=16
+# background-opacity-cells = true
+
+# Shell integration
+shell-integration-features = true
+shell-integration = detect
+
+# Theme
+theme = Catppuccin Mocha
+
+# Window configuration
+# window-decoration = false
+window-padding-x = 5
+window-padding-y = 5
+window-padding-balance = true
+window-width = 100
+window-height = 30
+macos-titlebar-style = hidden
+
+# Window behavior - maximize on startup
+window-save-state = always
+window-inherit-working-directory = true
+window-inherit-font-size = true
+
+# Tab bar configuration
+gtk-tabs-location = hidden
+
+# Keybindings
+# Open config file (CMD+,)
+keybind = super+comma=open_config
