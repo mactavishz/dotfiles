@@ -17,6 +17,7 @@ return {
         "c",
         "diff",
         "html",
+        "helm",
         "lua",
         "luadoc",
         "markdown",
