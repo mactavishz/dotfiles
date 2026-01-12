@@ -33,6 +33,13 @@ return {
     opts = {
       ensure_installed = {},
       automatic_installation = true,
+      -- suppress warning as they are not included in Mason registry
+      ignore_install = {
+        "clj-kondo",
+        "janet",
+        "ruby",
+        "inko",
+      },
     },
   },
 }
