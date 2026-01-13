@@ -17,7 +17,12 @@ return {
       },
     },
   },
-  init = function()
-    vim.cmd("colorscheme catppuccin")
-  end,
+  {
+    "Shatur/neovim-ayu",
+    cond = vim.g.vscode == nil,
+    opt = {},
+    init = function()
+      vim.cmd("colorscheme ayu")
+    end,
+  },
 }
