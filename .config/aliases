@@ -18,6 +18,7 @@ alias mx="mise x"
 alias mr="mise r"
 alias -- -='cd -'
 alias ..='cd ..'
+alias tmux-broadcast='read "cmd?Command: "; for pane in $(tmux list-panes -a -F "#{pane_id}"); do tmux send-keys -t "$pane" "$cmd" C-m; done'
 
 portpid() {
   # Check if the second argument is exactly "-v"
