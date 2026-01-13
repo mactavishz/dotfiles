@@ -17,7 +17,7 @@ shell-integration-features = true
 shell-integration = detect
 
 # Theme
-theme = Catppuccin Mocha
+theme = Ayu
 
 # Window configuration
 window-padding-x = 5
