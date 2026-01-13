@@ -79,15 +79,15 @@ return {
       cond = conditions.buffer_not_empty,
     })
 
+    ins_left({ "location" })
+
     ins_left({
       -- filesize component
       "filesize",
       cond = conditions.buffer_not_empty,
     })
 
-    ins_left({ "location" })
-
-    ins_left({ "progress" })
+    -- ins_left({ "progress" })
 
     ins_left({
       "diagnostics",
@@ -120,7 +120,6 @@ return {
         end
         return msg
       end,
-      icon = " LSP:",
     })
 
     -- Add components to right sections
