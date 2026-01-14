@@ -17,7 +17,7 @@ shell-integration-features = true
 shell-integration = detect
 
 # Theme
-theme = Ayu
+theme = Ayu Mirage
 
 # Window configuration
 window-padding-x = 5
