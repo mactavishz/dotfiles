@@ -20,6 +20,7 @@ M.lsp_list = {
   "jsonls",
   "marksman",
   "ansiblels",
+  "astro",
 }
 
 -- Diagnostic Config
