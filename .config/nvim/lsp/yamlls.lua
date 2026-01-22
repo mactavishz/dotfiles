@@ -13,7 +13,9 @@ return {
     -- formatting disabled by default in yaml-language-server; enable it
     yaml = {
       keyOrdering = false,
-      format = {},
+      format = {
+        enabled = true
+      },
       completion = true,
       hover = true,
       validate = true,
