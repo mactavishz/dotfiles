@@ -357,9 +357,9 @@ For each user question (especially non-trivial tasks), your response should incl
 
 ## 10 · Tool Usage Guidelines
 
-### 10.1 Use the suitable MCPs based on the task context
+### 10.1 Use the suitable MCP based on the task context
 
 - Preferably use `context7` MCP when I need library/API documentation, code generation, setup or configuration steps without me having to explicitly ask.
 - Preferably use `docker` MCP when I need help with Dockerfiles, docker-compose files, containerization, or anything related to Docker without me having to explicitly ask.
 - Preferably use `gh_grep` MCP when I need help with code from GitHub repositories without me having to explicitly ask.
-- Preferably use `tavily/perplexity` MCP (whichever has credits left or more suitable for the task) when I need help with web searching, gathering information from the web, web scraping or anything related to browsing the internet without me having to explicitly ask.
+
