@@ -213,7 +213,7 @@
     }
   },
   "mcp": {
-    "MCP_DOCKER": {
+    "docker": {
       "type": "local",
       "command": [
         "docker",
@@ -221,6 +221,21 @@
         "gateway",
         "run"
       ],
+      "enabled": true
+    },
+    "context7": {
+      "type": "local",
+      "command": [
+        "docker",
+        "run",
+        "-i",
+        "--rm",
+        "mcp/context7"
+      ]
+    },
+    "gh_grep": {
+      "type": "remote",
+      "url": "https://mcp.grep.app",
       "enabled": true
     }
   }
