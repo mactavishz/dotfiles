@@ -1,8 +1,19 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "plugin": [
-    "opencode-antigravity-auth@beta"
+    "opencode-antigravity-auth@beta",
+    "@plannotator/opencode@latest"
   ],
+  "agent": {
+    "build": {
+      "mode": "primary",
+      "model": "github-copilot/gpt-5.2-codex"
+    },
+    "plan": {
+      "mode": "primary",
+      "model": "github-copilot/gpt-5.2"
+    }
+  },
   "permission": {
     "lsp": "allow",
     "skill": "allow"
@@ -224,14 +235,12 @@
       "enabled": true
     },
     "context7": {
-      "type": "local",
-      "command": [
-        "docker",
-        "run",
-        "-i",
-        "--rm",
-        "mcp/context7"
-      ]
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+      },
+      "enabled": true
     },
     "gh_grep": {
       "type": "remote",
