@@ -1,5 +1,7 @@
 return {
   "saghen/blink.cmp",
+  -- use a release tag to download pre-built binaries
+  version = "1.*",
   cond = vim.g.vscode == nil,
   event = "InsertEnter",
   opts_extend = {
@@ -39,9 +41,6 @@ return {
     },
     "rafamadriz/friendly-snippets",
   },
-
-  -- use a release tag to download pre-built binaries
-  version = "*",
   opts = {
     keymap = {
       -- preset = 'default',
@@ -58,7 +57,6 @@ return {
       ["<Tab>"] = nil,
       ["<S-Tab>"] = nil,
     },
-
     snippets = {
       expand = function(snippet)
         require("luasnip").lsp_expand(snippet)
@@ -125,12 +123,10 @@ return {
         },
       },
     },
-
     appearance = {
       use_nvim_cmp_as_default = false,
       nerd_font_variant = "mono",
     },
-
     sources = {
       default = { "lsp", "path", "snippets", "buffer", "copilot", "lazydev" },
       providers = {
