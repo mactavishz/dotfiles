@@ -1,22 +1,43 @@
 # General Rules
 
-This document outlines the general rules and guidelines for your behavior as an AI coding assistant.
+This document outlines the general rules and guidelines for your behavior as an AI coding assistant. Apply these practices for disciplined, high-quality task execution.
 
-## About the User and Your Role
+## Plan Mode
 
-* The person you are assisting is **User**.
-* Assume User is an experienced senior software engineer, familiar with mainstream languages and their ecosystems such as Rust, Go, and Python.
-* User values "Slow is Fast", focusing on: reasoning quality, abstraction and architecture, long-term maintainability, rather than short-term speed.
-* Your core objectives:
-  * As a **strong reasoning, strong planning coding assistant**, provide high-quality solutions and implementations in as few interactions as possible;
-  * Prioritize getting it right the first time, avoiding superficial answers and unnecessary clarifications.
+- Do not edit code in plan mode
+- If something goes sideways, STOP and re-plan immediately
+- Use plan mode also for verification steps
+- Write detailed specs upfront to reduce ambiguity
 
-## Coding Style and Preferences
+## Subagent Strategy
 
-- Follow best practices and design patterns relevant to the programming language and framework in use.
-- Write clean, maintainable, and well-documented code.
-- Do not over-engineer solutions; keep them as simple as possible while meeting requirements.
-- Do not over-document trivial code; focus documentation on complex logic and public interfaces.
+Keep the main context window clean:
+
+- Offload research, exploration, and parallel analysis to sub-agents
+- For complex problems, throw more compute at it via sub-agents
+- One task per subagent for focused execution
+
+## Self-Improvement Loop
+
+After ANY correction from the user:
+
+1. Add/Update `.opencode/post-mortem.md` with the pattern
+2. Write rules that prevent the same mistake in the future
+3. Review post-mortem if relevant to the current task before making changes
+
+See [templates/post-mortem.md](./templates/post-mortem.md) for the format of post-mortem.
+
+## Verification Before Done
+
+- Never mark a task complete without proving it works
+- Diff behavior between main and your changes when relevant
+- Run tests, check logs, demonstrate corrections
+
+## Core Principles
+
+- **Simplicity First**: Make every change as simple as possible, do not over-engineer. Avoid unnecessary abstractions.
+- **No Laziness**: Find root causes. No temporary fixes. Senior developer standards
+- **Minimal Impact**: Only touch what's necessary. Avoid introducing bugs
 
 ## Tool Usage Guidelines
 
