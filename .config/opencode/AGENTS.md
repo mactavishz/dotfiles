@@ -8,6 +8,7 @@ This document outlines the general rules and guidelines for your behavior as an 
 - If something goes sideways, STOP and re-plan immediately
 - Use plan mode also for verification steps
 - Write detailed specs upfront to reduce ambiguity
+- Before you leave the plan mode, you should **always use plannotator** for me to review the plan.
 
 ## Subagent Strategy
 
@@ -16,16 +17,6 @@ Keep the main context window clean:
 - Offload research, exploration, and parallel analysis to sub-agents
 - For complex problems, throw more compute at it via sub-agents
 - One task per subagent for focused execution
-
-## Self-Improvement Loop
-
-After ANY correction from the user:
-
-1. Add/Update `.opencode/post-mortem.md` with the pattern
-2. Write rules that prevent the same mistake in the future
-3. Review post-mortem if relevant to the current task before making changes
-
-See [templates/post-mortem.md](./templates/post-mortem.md) for the format of post-mortem.
 
 ## Verification Before Done
 
