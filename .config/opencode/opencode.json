@@ -6,11 +6,11 @@
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "github-copilot/claude-sonnet-4.6"
+      "model": "github-copilot/gpt-5.3-codex"
     },
     "plan": {
       "mode": "primary",
-      "model": "github-copilot/claude-opus-4.6"
+      "model": "github-copilot/gpt-5.4"
     }
   },
   "permission": {
