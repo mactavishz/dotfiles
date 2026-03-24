@@ -8,7 +8,7 @@ This document outlines the general rules and guidelines for your behavior as an 
 - If something goes sideways, STOP and re-plan immediately
 - Use plan mode also for verification steps
 - Write detailed specs upfront to reduce ambiguity
-- Before you leave the plan mode, you should ALWAYS use the `submit_plan` tool from Plannotator for me to review the plan.
+- Before you leave the plan mode, you MUST ALWAYS use the `submit_plan` tool from Plannotator for me to review the plan.
 
 ## Subagent Strategy
 
