@@ -13,10 +13,6 @@
       "model": "github-copilot/gpt-5.4"
     }
   },
-  "permission": {
-    "lsp": "allow",
-    "skill": "allow"
-  },
   "mcp": {
     "docker": {
       "type": "local",
