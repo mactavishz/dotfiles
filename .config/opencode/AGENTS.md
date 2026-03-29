@@ -5,10 +5,8 @@ This document outlines the general rules and guidelines for your behavior as an 
 ## Plan Mode
 
 - Do not edit code in plan mode
-- If something goes sideways, STOP and re-plan immediately
-- Use plan mode also for verification steps
 - Write detailed specs upfront to reduce ambiguity
-- Before you leave the call `plan_exit`, you MUST ALWAYS use the `submit_plan` tool for me to review the plan.
+- If something goes sideways, STOP and re-plan immediately
 
 ## Subagent Strategy
 
