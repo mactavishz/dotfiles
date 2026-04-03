@@ -10,7 +10,7 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "github-copilot/gpt-5.4"
+      "model": "github-copilot/gpt-5.3-codex"
     }
   },
   "mcp": {
