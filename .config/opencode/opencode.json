@@ -3,14 +3,30 @@
   "plugin": [
     "@plannotator/opencode@latest"
   ],
+  "provider": {
+    "github-copilot": {
+      "models": {
+        "gpt-5.4": {
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "gpt-5.3-codex": {
+          "options": {
+            "reasoningEffort": "high"
+          }
+        }
+      }
+    }
+  },
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "github-copilot/gpt-5.3-codex"
+      "model": "github-copilot/gpt-5.4"
     },
     "plan": {
       "mode": "primary",
-      "model": "github-copilot/gpt-5.3-codex"
+      "model": "github-copilot/gpt-5.4"
     }
   },
   "mcp": {
