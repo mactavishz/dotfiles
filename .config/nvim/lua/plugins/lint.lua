@@ -6,12 +6,9 @@ return {
       events = { "BufReadPost", "BufWritePost", "InsertLeave" },
       -- The linters are installed automatically via mason-nvim-lint
       linters_by_ft = {
-        markdown = { "markdownlint", "value" },
+        markdown = { "markdownlint" },
         go = { "golangcilint" },
         python = { "ruff" },
-        -- We have to do some manual configuration for vale
-        -- See: https://docs.rockylinux.org/books/nvchad/vale_nvchad/
-        text = { "vale" },
       },
     },
     config = function(_, opts)
