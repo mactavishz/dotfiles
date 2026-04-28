@@ -13,6 +13,14 @@
       "model": "github-copilot/gpt-5.4"
     }
   },
+  "permission": {
+    "read": {
+      "*.env": "deny",
+      "*.env.*": "deny",
+      ".envrc": "deny",
+      "*.env.example": "allow"
+    }
+  },
   "mcp": {
     "docker": {
       "type": "local",
