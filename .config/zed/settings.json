@@ -1,0 +1,31 @@
+{
+  "edit_predictions": { "disabled_globs": [], "provider": "zed" },
+  "project_panel": { "dock": "left" },
+  "outline_panel": { "dock": "left" },
+  "collaboration_panel": { "dock": "left" },
+  "agent": { "dock": "right", "favorite_models": [], "model_parameters": [] },
+  "git_panel": { "dock": "left" },
+  "icon_theme": {
+    "mode": "light",
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha",
+  },
+  "vim_mode": true,
+  "base_keymap": "VSCode",
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Catppuccin Mocha",
+  },
+  "buffer_font_size": 20,
+  "cursor_blink": true,
+  "tabs": { "file_icons": true, "git_status": true },
+  "soft_wrap": "editor_width",
+  "context_servers": {
+    "MCP_DOCKER": {
+      "enabled": true,
+      "command": "docker",
+      "args": ["mcp", "gateway", "run"],
+    },
+  },
+}

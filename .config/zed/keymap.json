@@ -1,0 +1,109 @@
+[
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "j": ["vim::Down", { "display_lines": true }],
+      "k": ["vim::Up", { "display_lines": true }],
+    },
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimCount",
+    "bindings": {
+      "0": ["vim::StartOfLine", { "display_lines": true }],
+      "$": ["vim::EndOfLine", { "display_lines": true }],
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "space space": "tab_switcher::Toggle",
+      "space f f": "file_finder::Toggle",
+      "space f z": "pane::DeploySearch",
+      "space e": "project_panel::ToggleFocus",
+      "space d s": "outline::Toggle",
+      "space w s": "project_symbols::Toggle",
+      "space c a": "editor::ToggleCodeActions",
+      "space r n": "editor::Rename",
+      "g g": "editor::MoveToBeginning",
+      "] g": "editor::GoToDiagnostic",
+      "[ g": "editor::GoToPreviousDiagnostic",
+      "g d": "editor::GoToDefinition",
+      "g shift-d": "editor::GoToDeclaration",
+      "g r": "editor::FindAllReferences",
+      "g shift-i": "editor::GoToImplementation",
+      "g y": "editor::GoToTypeDefinition",
+      "shift-k": "editor::Hover",
+      "ctrl-n": "editor::SelectNext",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      "ctrl-n": "editor::SelectNext",
+    },
+  },
+  {
+    "context": "Editor && menu",
+    "bindings": {
+      "ctrl-y": "editor::ConfirmCompletion",
+    },
+  },
+  {
+    "context": "os == macos > Editor && vim_mode == normal",
+    "bindings": {
+      "cmd-w": "pane::CloseActiveItem",
+    },
+  },
+  {
+    "context": "os == windows > Editor && vim_mode == normal",
+    "bindings": {
+      "ctrl-w": "pane::CloseActiveItem",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "g c c": "editor::ToggleComments",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "g c": "editor::ToggleComments",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      "j k": "vim::NormalBefore",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "space e": "project_panel::ToggleFocus",
+      "r": "project_panel::Rename",
+      "d": "project_panel::Delete",
+      "y": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "x": "project_panel::Cut",
+      "a": "project_panel::NewFile",
+      "shift-a": "project_panel::NewDirectory",
+      "ctrl-v": "project_panel::OpenSplitVertical",
+      "ctrl-x": "project_panel::OpenSplitHorizontal",
+    },
+  },
+]
