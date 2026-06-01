@@ -72,7 +72,7 @@ bindkey '^e' autosuggest-execute
 source ~/.config/aliases
 
 # History
-HISTSIZE=5000
+HISTSIZE=10000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
