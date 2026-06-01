@@ -4,7 +4,8 @@
 # font-family = "Symbols Nerd Font"
 # font-family = "Hack Nerd Font Mono"
 # font-family = "Fira Code"
-font-family = "JetBrains Mono"
+# font-family = "JetBrains Mono"
+font-family = "Maple Mono NF"
 font-size = 20
 
 # Background
@@ -20,8 +21,8 @@ shell-integration = detect
 theme = Ayu Mirage
 
 # Window configuration
-window-padding-x = 5
-window-padding-y = 5
+window-padding-x = 12
+window-padding-y = 8
 window-padding-balance = true
 window-width = 100
 window-height = 30
@@ -30,6 +31,10 @@ window-height = 30
 window-save-state = always
 window-inherit-working-directory = true
 window-inherit-font-size = true
+
+# Cursor
+cursor-style = bar
+cursor-style-blink = true
 
 # Tab bar configuration
 gtk-tabs-location = hidden
