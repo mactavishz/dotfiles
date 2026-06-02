@@ -33,7 +33,6 @@ window-inherit-working-directory = true
 window-inherit-font-size = true
 
 # Cursor
-cursor-style = bar
 cursor-style-blink = true
 
 # Tab bar configuration
