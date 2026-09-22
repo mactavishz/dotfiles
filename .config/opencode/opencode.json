@@ -20,15 +20,5 @@
     }
   },
   "mcp": {
-    "docker": {
-      "type": "local",
-      "command": [
-        "docker",
-        "mcp",
-        "gateway",
-        "run"
-      ],
-      "enabled": true
-    }
   }
 }
